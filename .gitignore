@@ -1,0 +1,33 @@
+# Environment variables - JANGAN di-push! API key ada disini
+.env
+
+# VectorDB - file besar, tidak perlu di-push
+data/vectorstore/
+
+# Dokumen PDF - file besar, tidak perlu di-push
+data/documents/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Anaconda
+.conda/
