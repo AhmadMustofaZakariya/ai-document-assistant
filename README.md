@@ -17,7 +17,7 @@ An intelligent document assistant powered by RAG (Retrieval-Augmented Generation
 ![Groq](https://img.shields.io/badge/Groq-Llama3.1-orange)
 
 ## 🚀 Live Demo
-[🤗 Try it on HuggingFace Spaces](https://huggingface.co/spaces/kazakiakayami/ai-document-assistant)
+[▶️ Try it on Streamlit Cloud](https://ai-document-assistant-de4l28z4ihph4zdwj8fr3x.streamlit.app)
 
 ---
 
