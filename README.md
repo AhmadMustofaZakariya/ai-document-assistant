@@ -1,3 +1,12 @@
+---
+title: AI Document Assistant
+emoji: 📄
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # 📄 AI Document Assistant
 
 An intelligent document assistant powered by RAG (Retrieval-Augmented Generation) that allows you to upload PDF documents and ask questions about their content in natural language.
