@@ -1,8 +1,11 @@
-# Root app.py - entry point untuk HuggingFace
 import sys
 import os
 
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+# Tambahkan src ke path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(BASE_DIR, 'src'))
 
-# Import semua dari app/app.py
-exec(open(os.path.join(os.path.dirname(__file__), 'app', 'app.py')).read())
+# Update path di app/app.py sebelum exec
+os.chdir(BASE_DIR)
+
+exec(open(os.path.join(BASE_DIR, 'app', 'app.py')).read())
