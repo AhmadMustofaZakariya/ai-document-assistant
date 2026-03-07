@@ -2,14 +2,21 @@ import streamlit as st
 import sys
 import os
 import tempfile
+import traceback
 
-# Path langsung ke src (tanpa app/ folder)
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+try:
+    sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+    
+    from document_loader import load_document
+    from chunker import chunk_documents
+    from embedder import create_vectorstore
+    from rag_chain import create_rag_chain, ask_question
 
-from document_loader import load_document
-from chunker import chunk_documents
-from embedder import create_vectorstore
-from rag_chain import create_rag_chain, ask_question
+except Exception as e:
+    st.error(f"❌ Import Error: {str(e)}")
+    st.code(traceback.format_exc())
+    st.stop()
+
 
 # ─── PAGE CONFIG ───────────────────────────────────────
 st.set_page_config(
