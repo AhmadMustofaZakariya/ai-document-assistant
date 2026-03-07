@@ -1,19 +1,32 @@
-import streamlit as st
 import sys
+print("=== APP STARTING ===", flush=True)
+print(f"Python: {sys.version}", flush=True)
+print(f"Path: {sys.path}", flush=True)
+
+import streamlit as st
 import os
 import tempfile
 import traceback
 
+print("=== BASIC IMPORTS OK ===", flush=True)
+
 try:
     sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+    print(f"=== SRC PATH ADDED ===", flush=True)
     
     from document_loader import load_document
+    print("=== document_loader OK ===", flush=True)
     from chunker import chunk_documents
+    print("=== chunker OK ===", flush=True)
     from embedder import create_vectorstore
+    print("=== embedder OK ===", flush=True)
     from rag_chain import create_rag_chain, ask_question
+    print("=== rag_chain OK ===", flush=True)
 
 except Exception as e:
-    st.error(f"❌ Import Error: {str(e)}")
+    print(f"=== ERROR: {str(e)} ===", flush=True)
+    print(traceback.format_exc(), flush=True)
+    st.error(f"❌ Error: {str(e)}")
     st.code(traceback.format_exc())
     st.stop()
 
