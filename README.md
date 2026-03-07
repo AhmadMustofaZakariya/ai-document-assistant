@@ -1,14 +1,14 @@
 ---
-title: Streamlit Template Space
+title: Ai Document Assistant
 emoji: 🚀
 colorFrom: red
 colorTo: red
 sdk: docker
 app_port: 8501
 tags:
-  - streamlit
+- streamlit
 pinned: false
-short_description: Streamlit template space
+short_description: Smart RAG Assistant for lightning-fast document retrieval
 ---
 
 # Welcome to Streamlit!
