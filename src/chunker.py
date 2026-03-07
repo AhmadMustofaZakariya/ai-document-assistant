@@ -8,7 +8,12 @@ def chunk_documents(documents, chunk_size=1000, chunk_overlap=100):
     )
 
     chunks = text_splitter.split_documents(documents)
-    chunks = [chunk for chunk in chunks if len(chunk.page_content.strip()) >50]
+    chunks = [
+    chunk for chunk in chunks 
+    if chunk.page_content 
+    and isinstance(chunk.page_content, str)
+    and len(chunk.page_content.strip()) > 50
+]
     return chunks
 
 if __name__ == "__main__":
