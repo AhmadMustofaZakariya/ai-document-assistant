@@ -39,7 +39,8 @@ st.set_page_config(
 )
 
 def save_uploaded_file(uploaded_file):
-    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
+    suffix = os.path.splitext(uploaded_file.name)[1]
+    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
     tmp.write(uploaded_file.getbuffer())
     tmp.close()
     return tmp.name
@@ -80,9 +81,9 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("📁 Upload Document")
     uploaded_file = st.file_uploader(
-        "Upload a PDF file",
-        type=["pdf"],
-        help="Upload a PDF document to start chatting"
+        "Upload a PDF/CSV/Words/Excel file",
+        type=["pdf", "csv", "docx", "xlsx"],
+        help="Upload a PDF/CSV/Words/Excel document to start chatting"
     )
 
     if uploaded_file is not None:
